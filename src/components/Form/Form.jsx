@@ -5,10 +5,12 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import { schemaValidationForm } from '../../utilitis/validation';
 
+import { postData } from '../api/api';
 const Form = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schemaValidationForm),
@@ -16,6 +18,7 @@ const Form = () => {
 
   const onSubmit = async (data) => {
     await postData(data);
+    reset();
     //     window.location.reload();
   };
 
