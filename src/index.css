@@ -1,0 +1,61 @@
+:root {
+  --darkColor: #010101;
+  --grayColor: #01010133;
+  --grayLightColor: #f2f4fa;
+  --accentColor: #0f7c41;
+  --hoverColor: #0b44cd;
+  --policyColor: #3577f7;
+  --whiteOriginColor: #ffffff;
+  --shadowColor: #0f7c4133;
+  --boxShadow: 0px 0px 20px var(--shadowColor);
+}
+
+body {
+  background-color: var(--whiteOriginColor);
+  font-family: Manrope;
+  width: 100%;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  outline: none;
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: block;
+  background-color: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
