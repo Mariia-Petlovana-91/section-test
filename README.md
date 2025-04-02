@@ -1,12 +1,26 @@
-# React + Vite
+# Section Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Проект побудовано за допомогою **Vite** для швидкого бандлінгу та
+розробки. Всі дані обробляються через **React Hook Form** та імітація
+відправки на фейкову адресу https://example.com/register за допомогою
+**Axios**. Крім того, використовується ряд інших корисних бібліотек,
+таких як **React Icons** для іконок і **Yup** для валідації форм.
 
-Currently, two official plugins are available:
+- Vite - сучасний бандлер для швидкого розроблення.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React Hook Form - для роботи з формами в React.
 
-## Expanding the ESLint configuration
+- Axios - для виконання HTTP запитів.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React Icons - для інтеграції іконок в інтерфейс.
+
+- React Responsive - для маніпуляцій видимості кнопки,таймеру,форми
+  тощо.
+
+- React Hot Hoast - для покращення досвіду користувача
+
+- Clsx i Modern Normalize - для маніпуляцій зі стилями.
+
+- Yup - бібліотека для валідації форм.
+
+- GitHub Pages - для хостингу проекту.
