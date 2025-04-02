@@ -6,8 +6,9 @@ import { useMediaQuery } from 'react-responsive';
 import Timer from '../Timer/Timer';
 import logo from '../../img/logo.svg';
 
-const About = () => {
+const About = ({ isOpen, setIsOpen }) => {
   const visualTimer = useMediaQuery({ minWidth: 768 });
+
   return (
     <div className={css.about}>
       <img className={css.aboutImd} src={logo} alt="logo" />
@@ -55,7 +56,9 @@ const About = () => {
         Опануйте функціонал Microsoft Excel, автоматизуйте свою роботу
         та створюйте таблиці швидко і в задоволення
       </p>
-      {!visualTimer && <Timer />}
+      {!visualTimer && (
+        <Timer isOpen={isOpen} setIsOpen={setIsOpen} />
+      )}
     </div>
   );
 };

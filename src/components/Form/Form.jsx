@@ -15,20 +15,16 @@ import { postData } from '../../api/api';
 import FormHeader from './FormHeader/FormHeader';
 import Timer from '../Timer/Timer';
 
-const Form = () => {
-  const [isOpen, setIsOpen] = useState(true);
+const Form = ({ isOpen, setIsOpen }) => {
   const visualForm = useMediaQuery({ minWidth: 768 });
 
   useEffect(() => {
     if (visualForm) {
       setIsOpen(true);
-    } else {
-      setIsOpen(false);
     }
-  }, [visualForm]);
+  }, [visualForm, setIsOpen]);
 
   const onClose = () => {
-    setIsClick(false);
     setIsOpen(false);
   };
 
@@ -47,11 +43,10 @@ const Form = () => {
   };
 
   return (
-    isOpen &&
-    visualForm && (
+    isOpen && (
       <div className={css.formBackdrop}>
         <FormHeader onClose={onClose} />
-        <Timer />
+        <Timer isOpen={isOpen} setIsOpen={setIsOpen} />
         <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
           <input
             className={css.formInput}
