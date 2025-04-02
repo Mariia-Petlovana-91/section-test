@@ -5,17 +5,29 @@
   width: 100vw;
   height: 100vh;
   background: var(--whiteOriginColor);
-  display: flex;
-  justify-content: center;
-
   z-index: 1000;
+  padding: 30px 20px 0px 20px;
 }
 
 .form {
+  width: 100%;
 }
 
 .formInput {
-  display: block;
+  width: 100%;
+  background-color: var(--grayLightColor);
+  margin-bottom: 20px;
+  padding: 12px 20px 12px 20px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--grayInputTextColor);
+  transition: box-shadow 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.formInput:hover,
+.formInput:focus {
+  box-shadow: var(--boxShadow);
 }
 
 .formInputPhone {
@@ -38,35 +50,89 @@
 }
 
 .formError {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--errorColor);
+  margin-bottom: 10px;
 }
 
 .formBtn {
+  margin-top: 32px;
 }
 
 .formCheckbox {
+  display: flex;
+  position: relative;
+}
+
+.formCheckbox input[type='checkbox'] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  margin: -1px;
 }
 
 .formCheck {
+  position: absolute;
+  display: flex;
+  width: 14px;
+  height: 14px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--accentColor);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .formCheckIcon {
+  display: none;
+  font-size: 12px;
+  color: var(--accentColor);
+}
+
+.formCheckbox
+  input[type='checkbox']:checked
+  + .formCheck
+  .formCheckIcon {
+  display: block;
 }
 
 .formText {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  margin-left: 20px;
 }
 
 .formLink {
+  color: var(--policyColor);
+  transition: color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.formLink:hover,
+.formLink:focus {
+  color: var(--hoverColor);
 }
 
 @media screen and (min-width: 768px) {
   .formBackdrop {
+    box-shadow: var(--boxShadow);
+    position: static;
     width: 336px;
     height: auto;
+    padding: 32px 20px 32px 20px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .formBackdrop {
     width: 488px;
+    padding: 52px;
   }
 }

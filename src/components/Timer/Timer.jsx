@@ -29,31 +29,34 @@ const Timer = ({ isOpen, setIsOpen }) => {
   }, []);
 
   return (
-    <div className={css.timer}>
+    <div className={clsx(!isOpen && css.timerContainer)}>
       <h3 className="thirdTitle">Реєструйся просто зараз</h3>
-      <div className={css.timerEl}>
-        <span className={css.timerNumber}>{timeLeft.days}</span>
-        <span>днів</span>
+      <div className={css.timer}>
+        <div className={css.timerEl}>
+          <span className={css.timerNumber}>{timeLeft.days}</span>
+          <span className={css.timerText}>днів</span>
+        </div>
+        <span className={css.timerPoint}>:</span>
+        <div className={css.timerEl}>
+          <span className={css.timerNumber}>{timeLeft.hours}</span>
+          <span className={css.timerText}>годин</span>
+        </div>
+        <span className={css.timerPoint}>:</span>
+        <div className={css.timerEl}>
+          <span className={css.timerNumber}>{timeLeft.minutes}</span>
+          <span className={css.timerText}>хвилин</span>
+        </div>
+        <span className={css.timerPoint}>:</span>
+        <div className={css.timerEl}>
+          <span
+            className={clsx(css.timerNumber, css.timerNumberSeconds)}
+          >
+            {timeLeft.seconds}
+          </span>
+          <span className={css.timerText}>секунд</span>
+        </div>
       </div>
-      <span className={css.timerPoint}>:</span>
-      <div className={css.timerEl}>
-        <span className={css.timerNumber}>{timeLeft.hours}</span>
-        <span>годин</span>
-      </div>
-      <span className={css.timerPoint}>:</span>
-      <div className={css.timerEl}>
-        <span className={css.timerNumber}>{timeLeft.minutes}</span>
-        <span>хвилин</span>
-      </div>
-      <span className={css.timerPoint}>:</span>
-      <div className={css.timerEl}>
-        <span
-          className={clsx(css.timerNumber, css.timerNumberSeconds)}
-        >
-          {timeLeft.seconds}
-        </span>
-        <span>секунд</span>
-      </div>
+
       {!visualButton && !isOpen && (
         <button
           className="btnRegister"

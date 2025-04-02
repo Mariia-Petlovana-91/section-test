@@ -54,7 +54,7 @@ const Form = ({ isOpen, setIsOpen }) => {
             placeholder="Введи своє ім’я"
           />
           {errors.name && (
-            <div className={css.formError}>{errors.name.message}</div>
+            <p className={css.formError}>{errors.name.message}</p>
           )}
 
           <input
@@ -63,9 +63,7 @@ const Form = ({ isOpen, setIsOpen }) => {
             placeholder="Введи свій E-mail"
           />
           {errors.email && (
-            <div className={css.formError}>
-              {errors.email.message}
-            </div>
+            <p className={css.formError}>{errors.email.message}</p>
           )}
 
           <div className={css.inputWrapper}>
@@ -76,39 +74,38 @@ const Form = ({ isOpen, setIsOpen }) => {
             />
           </div>
           {errors.phone && (
-            <div className={css.formError}>
-              {errors.phone.message}
-            </div>
+            <p className={css.formError}>{errors.phone.message}</p>
           )}
 
           <div className={css.formCheckbox}>
             <input
               type="checkbox"
-              // className="visually-hidden"
               {...register('checkbox')}
+              id="agree"
             />
-            <div className={css.formCheck}>
+            <label className={css.formCheck} htmlFor="agree">
               <FaCheck className={css.formCheckIcon} />
-            </div>
+            </label>
             <p className={css.formText}>
-              Згоден з
+              Згоден з &#8201;
               <a className={css.formLink} href="#">
-                Політика конфеденційності
-              </a>
-              та
+                Політикою конфіденційності
+              </a>{' '}
+              &#8201; та &#8201;
               <a className={css.formLink} href="#">
-                Умови користування послугами
+                Умовами користування послугами
               </a>
             </p>
           </div>
 
           {errors.checkbox && (
-            <div className={css.formError}>
-              {errors.checkbox.message}
-            </div>
+            <p className={css.formError}>{errors.checkbox.message}</p>
           )}
 
-          <button className="btnRegister" type="submit">
+          <button
+            className={clsx('btnRegister', css.formBtn)}
+            type="submit"
+          >
             Зареєструватися
           </button>
         </form>

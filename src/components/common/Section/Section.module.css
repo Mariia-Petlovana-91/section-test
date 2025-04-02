@@ -1,12 +1,10 @@
 .section {
-  height: 100vh;
   position: relative;
   background-color: aliceblue;
   background-image: url('../../../img/BG-mob.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  align-content: center;
 }
 
 @media screen and (min-width: 768px) {

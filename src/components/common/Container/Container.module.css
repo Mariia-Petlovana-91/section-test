@@ -1,15 +1,15 @@
 .container {
-    padding: 20px 40px 20px 40px;
+  padding: 20px 40px 20px 40px;
 }
 
 @media screen and (min-width: 768px) {
-    .container {
-        padding: 30px 32px 164px 32px;
-    }
+  .container {
+    padding: 30px 32px 30px 32px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    .container {
-        padding: 40px 112px 234px 112px;
-    }
+  .container {
+    padding: 40px 112px 40px 112px;
+  }
 }

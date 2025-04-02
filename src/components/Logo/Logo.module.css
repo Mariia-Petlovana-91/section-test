@@ -1,0 +1,17 @@
+.imd {
+  width: 100px;
+  height: 30px;
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .imd {
+    margin-bottom: 45px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .imd {
+    margin-bottom: 88px;
+  }
+}

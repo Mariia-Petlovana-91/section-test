@@ -4,49 +4,45 @@ import clsx from 'clsx';
 import { useMediaQuery } from 'react-responsive';
 
 import Timer from '../Timer/Timer';
-import logo from '../../img/logo.svg';
 
 const About = ({ isOpen, setIsOpen }) => {
   const visualTimer = useMediaQuery({ minWidth: 768 });
 
   return (
     <div className={css.about}>
-      <img className={css.aboutImd} src={logo} alt="logo" />
       <ul className={css.aboutList}>
         <li className={css.aboutItem}>
-          <p about={css.aboutListText}>
-            <span
-              className={clsx(css.aboutDecor, css.aboutTopRight)}
-            ></span>
-            <span
-              className={clsx(css.aboutDecor, css.aboutTopLeft)}
-            ></span>
-            Безоплатний вебінар
-          </p>
-          <span
+          <div
+            className={clsx(css.aboutDecor, css.aboutTopRight)}
+          ></div>
+          <div
+            className={clsx(css.aboutDecor, css.aboutTopLeft)}
+          ></div>
+          <p className={css.aboutListText}>Безоплатний вебінар</p>
+          <div
             className={clsx(css.aboutDecor, css.aboutBottomRight)}
-          ></span>
-          <span
+          ></div>
+          <div
             className={clsx(css.aboutDecor, css.aboutBottomLeft)}
-          ></span>
+          ></div>
         </li>
-        <li className={css.aboutItem}>
-          <p about={css.aboutListText}>
-            <span
-              className={clsx(css.aboutDecor, css.aboutTopRight)}
-            ></span>
-            <span
-              className={clsx(css.aboutDecor, css.aboutTopLeft)}
-            ></span>
+        <li className={clsx(css.aboutItem, css.aboutItemSecond)}>
+          <div
+            className={clsx(css.aboutDecor, css.aboutTopRight)}
+          ></div>
+          <div
+            className={clsx(css.aboutDecor, css.aboutTopLeft)}
+          ></div>
+          <p className={css.aboutListText}>
             Старт:{' '}
             <span className={css.aboutTextDate}>10 січня 19:30</span>
           </p>
-          <span
+          <div
             className={clsx(css.aboutDecor, css.aboutBottomRight)}
-          ></span>
-          <span
+          ></div>
+          <div
             className={clsx(css.aboutDecor, css.aboutBottomLeft)}
-          ></span>
+          ></div>
         </li>
       </ul>
       <h2 className="secondaryTitle">

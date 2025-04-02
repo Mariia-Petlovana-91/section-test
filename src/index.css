@@ -1,12 +1,14 @@
 :root {
   --darkColor: #010101;
   --grayColor: #01010133;
+  --grayInputTextColor: #767b8e;
   --grayLightColor: #f2f4fa;
   --accentColor: #0f7c41;
   --hoverColor: #0b44cd;
   --policyColor: #3577f7;
   --whiteOriginColor: #ffffff;
   --shadowColor: #0f7c4133;
+  --errorColor: rgba(221, 62, 62, 0.904);
   --boxShadow: 0px 0px 20px var(--shadowColor);
 }
 
@@ -55,10 +57,10 @@ img {
   height: auto;
 }
 
-.flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+input {
+  display: block;
+  border: none;
+  outline: none;
 }
 
 .visually-hidden {
@@ -74,10 +76,62 @@ img {
 }
 
 .secondaryTitle {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.22;
+  color: var(--darkColor);
+  text-align: start;
+  margin-bottom: 16px;
 }
 
 .thirdTitle {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 24px;
+  color: var(--darkColor);
+  text-align: center;
 }
 
 .btnRegister {
+  background-color: var(--accentColor);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--whiteOriginColor);
+  transition: box-shadow 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.btnRegister:hover,
+.btnRegister:focus {
+  box-shadow: var(--boxShadow);
+}
+
+.sectionFormEl {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .secondaryTitle {
+    font-size: 36px;
+    line-height: 1.22;
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .secondaryTitle {
+    font-size: 56px;
+    line-height: 1.21;
+    margin-bottom: 40px;
+  }
+
+  .thirdTitle {
+    font-size: 28px;
+    line-height: 1.14;
+  }
 }
