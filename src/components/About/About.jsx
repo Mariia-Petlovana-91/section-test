@@ -51,6 +51,10 @@ const About = () => {
       <h2 className="secondaryTitle">
         Навчіться створювати Excel-таблиці на pro-рівні
       </h2>
+      <p className={css.aboutDescript}>
+        Опануйте функціонал Microsoft Excel, автоматизуйте свою роботу
+        та створюйте таблиці швидко і в задоволення
+      </p>
       {!visualTimer && <Timer />}
     </div>
   );
