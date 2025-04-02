@@ -1,8 +1,8 @@
 import css from './Form.module.css';
 import clsx from 'clsx';
 
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -10,15 +10,25 @@ import { FaCheck } from 'react-icons/fa6';
 
 import { schemaValidationForm } from '../../utilitis/validation';
 
-import { postData } from '../api/api';
+import { postData } from '../../api/api';
 
 import FormHeader from './FormHeader/FormHeader';
 import Timer from '../Timer/Timer';
 
 const Form = () => {
   const [isOpen, setIsOpen] = useState(true);
+  const visualForm = useMediaQuery({ minWidth: 768 });
+
+  useEffect(() => {
+    if (visualForm) {
+      setIsOpen(true);
+    } else {
+      setIsOpen(false);
+    }
+  }, [visualForm]);
 
   const onClose = () => {
+    setIsClick(false);
     setIsOpen(false);
   };
 
@@ -37,7 +47,8 @@ const Form = () => {
   };
 
   return (
-    isOpen && (
+    isOpen &&
+    visualForm && (
       <div className={css.formBackdrop}>
         <FormHeader onClose={onClose} />
         <Timer />
@@ -78,7 +89,7 @@ const Form = () => {
           <div className={css.formCheckbox}>
             <input
               type="checkbox"
-              className="visually-hidden"
+              // className="visually-hidden"
               {...register('checkbox')}
             />
             <div className={css.formCheck}>
@@ -102,8 +113,8 @@ const Form = () => {
             </div>
           )}
 
-          <button className={css.formBtn} type="submit">
-            Send
+          <button className="btnRegister" type="submit">
+            Зареєструватися
           </button>
         </form>
       </div>
