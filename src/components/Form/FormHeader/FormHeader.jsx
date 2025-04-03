@@ -4,14 +4,14 @@ import { RiCloseLargeFill } from 'react-icons/ri';
 
 import css from './FormHeader.module.css';
 
-import svg from '../../../img/logo.svg';
+import Logo from '../../Logo/Logo';
 
 const FormHeader = ({ onClose }) => {
   const isNone = useMediaQuery({ minWidth: 768 });
   return (
     !isNone && (
       <div className={css.formHeader}>
-        <img className={css.logo} src={svg} alt="logo" />
+        <Logo />
         <button className={css.btn} type="button" onClick={onClose}>
           <RiCloseLargeFill className={css.icon} />
         </button>

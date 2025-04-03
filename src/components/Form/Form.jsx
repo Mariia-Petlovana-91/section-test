@@ -1,7 +1,7 @@
 import css from './Form.module.css';
 import clsx from 'clsx';
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
